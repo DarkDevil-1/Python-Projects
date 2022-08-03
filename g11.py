@@ -240,7 +240,7 @@ def descend():
             break
 
 
-def awscend():
+def ascend():
     while True:
         try:
             n1 = int(input('Enter no1: '))
@@ -257,12 +257,12 @@ def awscend():
             break
 
 
-def asscent():
+def choices():
     while True:
         try:
             i = input('Do you want to Ascending Order or descending order (A/D) : ')
             if i == 'A':
-                awscend()
+                ascend()
                 break
             if i == 'D':
                 descend()
@@ -284,12 +284,12 @@ def fact():
             elif num < 0:
                 print('Factorial does not exist for -ve numbers')
             else:
-                fact = 1
+                factorial = 1
                 index = 1
                 while index <= num:
-                    fact *= index
+                    factorial *= index
                     index += 1
-                print('The Factorial of', num, 'is', fact)
+                print('The Factorial of', num, 'is', factorial)
         except ValueError:
             error()
         else:
@@ -319,22 +319,13 @@ def abc():
             break
 
 
-def brek():
-    val = input()
-    for i in val:
-        if i == 'e':
-            print('The End')
-            break
-        print(i)
-
-
-def sumofdeez():
-    num = int(input('Enter number: '))
-    sum = 0
+def number():
+    num = input('Enter number: ')
+    summation = 0
     for i in num:
         i = int(i)
-        sum += i
-    print(sum)
+        summation += i
+    print(summation)
 
 
 def count():
@@ -353,4 +344,45 @@ def count():
             break
 
 
-count()
+def average():
+    name = input('Enter You Name:')
+    mark1 = float(input('Enter English Marks:'))
+    mark2 = float(input('Enter Math Marks:'))
+    mark3 = float(input('Enter Science Marks:'))
+
+    conv1 = mark1 / 40 * 100
+    conv2 = mark2 / 40 * 100
+    conv3 = mark3 / 40 * 100
+
+    total_perc = int((mark1 + mark2 + mark3) / 120 * 100)
+
+    print('HI', name, 'YOU SCORED AN AVERAGE OF', total_perc, '%''\n'
+                                                              'You Scored', conv1, '% in English''\n'
+                                                                                   'You Scored', conv2, '% in Maths''\n'
+                                                                                                        'You Scored',
+          conv3, '% in Science')
+
+
+def temperature():
+    while True:
+        try:
+            temp = float(input('Enter temperature: '))
+            choice_input = input('Enter unit of temperature (F/C): ')
+
+            if choice_input == 'F':
+                cel = (temp - 32) * 5 / 9
+                print('Given temperature in Celsius(C) is:', cel)
+
+            elif choice_input == 'C':
+                far = (temp * 9 / 5) + 32
+                print('Given temperature in Fahrenheit(F) is:', far)
+
+            else:
+                print('Please Enter a Valid Unit')
+        except ValueError:
+            error()
+        else:
+            break
+
+
+temperature()
