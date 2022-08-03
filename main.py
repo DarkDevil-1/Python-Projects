@@ -51,7 +51,7 @@ def calc():
                 elif op == '%':
                     val = num1 % num2
                     print('Answer:', val)
-        except:
+        except ValueError:
             error()
         else:
             what()
@@ -71,7 +71,7 @@ def age():
             d = int(input('Enter Current month in number (1,2,3...12): '))
 
             if a > b or d > 12:
-                print('HMMMMMM WHAT, i think you just broke my sys-')
+                print('HMM-MMMM WHAT, i think you just broke my sys-')
             else:
                 b -= a
                 if d == c:
@@ -88,7 +88,7 @@ def age():
                     print('You are', b, 'years and', c, 'months Old')
                     if b < 18:
                         print('\n ( ͡° ͜ʖ ͡°)')
-        except:
+        except ValueError:
             print('\n')
         else:
             time.sleep(3)
@@ -117,7 +117,7 @@ def what():
             elif opinion == 'B':
                 age()
             elif opinion == 'C':
-                sqcu()
+                square()
             elif opinion == 'D':
                 quad()
             elif opinion == 'E':
@@ -150,7 +150,7 @@ def leap():
                 print(inp, 'Is not a leap year')
             else:
                 error()
-        except:
+        except ValueError:
             error()
         else:
             time.sleep(3)
@@ -175,7 +175,7 @@ def guess():
                     ctr += 1
             if not ctr < 10:
                 print('\nYou Failed :( \nThe number was', number, )
-        except:
+        except ValueError:
             error()
         else:
             jas()
@@ -254,7 +254,7 @@ def quad():
             break
 
 
-def sqcu():
+def square():
     while True:
         try:
             print('*' * 9, 'THAHIR FILLING STATION , PAKISTAN', '*' * 9)
@@ -272,7 +272,7 @@ def sqcu():
                 print('\nThank You For using Thahir filling station')
             else:
                 error()
-        except:
+        except ValueError:
             error()
         else:
             time.sleep(3)
@@ -318,7 +318,7 @@ def area():
                 print('\nAREA OF RECTANGLE =', x, g)
             else:
                 print('Batman is dark so is your skin(if your white then its your heart)')
-        except:
+        except ValueError:
             error()
         else:
             time.sleep(3)
