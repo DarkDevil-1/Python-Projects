@@ -398,3 +398,19 @@ def revstr():
     name = input('Enter Your Name: ')
     for i in range(-1, -len(name) - 1, -1):
         print(name[i], end='')
+
+def shorty():
+    word = input('Enter a word: ')
+    out = ''
+    for i in range(0, len(word)):
+        if word[i] == word[0]:
+            out += word[0]
+        elif word[i - 1] == ' ':
+            out += word[i]
+        else:
+            continue
+
+    out = out.upper()
+
+    for i in out:
+        print(i + '.', end='')
