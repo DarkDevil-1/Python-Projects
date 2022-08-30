@@ -415,3 +415,12 @@ def shorty():
 
     for i in out:
         print(i + '.', end='')
+
+
+def vowel_count():
+    inp = input('Enter a word: ')
+    v_count = 0
+    for i in inp:
+        if i in 'aeiouAEIOU':
+            v_count += 1
+    print('Number of vowels:', v_count)
