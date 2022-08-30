@@ -385,4 +385,19 @@ def temperature():
             break
 
 
-temperature()
+def str_manipulation_1():
+    name = input('Enter Your Name: ')
+    for i in name:
+        if i == name[-1]:
+            print(i)
+        else:
+            print(i + '-', end='')
+
+
+def revstr():
+    name = input('Enter Your Name: ')
+    for i in range(-1, -len(name) - 1, -1):
+        print(name[i], end='')
+
+
+
