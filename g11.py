@@ -420,7 +420,26 @@ def shorty():
 def vowel_count():
     inp = input('Enter a word: ')
     v_count = 0
+    if inp.isnumeric():
+        error()
     for i in inp:
         if i in 'aeiouAEIOU':
             v_count += 1
     print('Number of vowels:', v_count)
+
+
+def pattern_1():
+    string = input('Enter a symbol: ')
+    lines = input('Enter Number of lines: ')
+    out = ''
+    for i in range(lines):
+        out += string
+        print(out)
+
+
+def pattern_2():
+    string = input('Enter a word: ')
+    out = ''
+    for i in range(0, len(str) + 1):
+        out += string[0:i]
+        print(out)
