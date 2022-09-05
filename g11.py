@@ -430,7 +430,7 @@ def vowel_count():
 
 def pattern_1():
     string = input('Enter a symbol: ')
-    lines = input('Enter Number of lines: ')
+    lines = int(input('Enter Number of lines: '))
     out = ''
     for i in range(lines):
         out += string
