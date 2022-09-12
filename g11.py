@@ -437,9 +437,22 @@ def pattern_1():
         print(out)
 
 
-def pattern_2():
+def count_str():
     string = input('Enter a word: ')
-    out = ''
-    for i in range(0, len(str) + 1):
-        out += string[0:i]
-        print(out)
+    upctr = 0
+    dnctr = 0
+    dictr = 0
+    wstr = 0
+    for i in string:
+        if i.isupper():
+            upctr += 1
+        if i.islower:
+            dnctr += 1
+        if i.isdigit():
+            dictr += 1
+        if i.isspace():
+            wstr += 1
+    print('You Entered', upctr, 'Uppercase Letters', dnctr, 'Lowercase Letters', dictr, 'Digits and', wstr, 'Spaces')
+
+
+count_str()
