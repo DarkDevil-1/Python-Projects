@@ -455,4 +455,17 @@ def count_str():
     print('You Entered', upctr, 'Uppercase Letters', dnctr, 'Lowercase Letters', dictr, 'Digits and', wstr, 'Spaces')
 
 
-count_str()
+def count_str_2():
+    line = input('Enter a line or sentence: ')
+    word = input('Enter a word or letter to count: ')
+    ctr = 0
+
+    if len(word) > 1:
+        line = line.split()
+        for i in line:
+            if i == word:
+                ctr += 1
+        print('The word "{}" appears {} times in the line.'.format(word, ctr))
+    else:
+        ctr = line.count(word)
+        print('The letter "{}" appears {} times in the line.'.format(word, ctr))
