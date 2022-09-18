@@ -487,12 +487,13 @@ def factorial_calculator():
     while True:
         try:
             x = int(input('Enter number 1: '))
-            y = int(input('Enter number 2: '))
-            num1 = factos(x)
-            num2 = factos(y)
             ops = ['+', '-', '*', '/']
             print('Enter any operator from the following', ops)
             ops_input = input('Enter operator: ')
+            y = int(input('Enter number 2: '))
+            num1 = factos(x)
+            num2 = factos(y)
+
             if ops_input == '+':
                 print(num1 + num2, 'Is the answer for the following operation', x, '!', ops_input, y, "!")
             elif ops_input == '-':
@@ -507,6 +508,3 @@ def factorial_calculator():
             error()
         else:
             break
-
-
-factorial_calculator()
