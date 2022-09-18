@@ -469,3 +469,44 @@ def count_str_2():
     else:
         ctr = line.count(word)
         print('The letter "{}" appears {} times in the line.'.format(word, ctr))
+
+
+def factorial_calculator():
+    def factos(num):
+        if num == 0:
+            print('Factorial of 0 is 1')
+        elif num < 0:
+            print('Factorial does not exist for -ve numbers')
+        else:
+            factorial = 1
+            index = 1
+            while index <= num:
+                factorial *= index
+                index += 1
+            return factorial
+    while True:
+        try:
+            x = int(input('Enter number 1: '))
+            y = int(input('Enter number 2: '))
+            num1 = factos(x)
+            num2 = factos(y)
+            ops = ['+', '-', '*', '/']
+            print('Enter any operator from the following', ops)
+            ops_input = input('Enter operator: ')
+            if ops_input == '+':
+                print(num1 + num2, 'Is the answer for the following operation', x, '!', ops_input, y, "!")
+            elif ops_input == '-':
+                print(num1 - num2, 'Is the answer for the following operation', x, '!', ops_input, y, '!')
+            elif ops_input == '*':
+                print(num1 * num2, 'Is the answer for the following operation', x, '!', ops_input, y, '!')
+            elif ops_input == '/':
+                print(num1 / num2, 'Is the answer for the following operation', x, "!", ops_input, y, "!")
+            else:
+                print('Invalid Operator')
+        except ValueError:
+            error()
+        else:
+            break
+
+
+factorial_calculator()
