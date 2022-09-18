@@ -474,9 +474,9 @@ def count_str_2():
 def factorial_calculator():
     def factos(num):
         if num == 0:
-            print('Factorial of 0 is 1')
+            return 1
         elif num < 0:
-            print('Factorial does not exist for -ve numbers')
+            return 'Factorial does not exist for -ve numbers'
         else:
             factorial = 1
             index = 1
