@@ -484,6 +484,7 @@ def factorial_calculator():
                 factorial *= index
                 index += 1
             return factorial
+
     while True:
         try:
             x = int(input('Enter number 1: '))
@@ -493,7 +494,9 @@ def factorial_calculator():
             y = int(input('Enter number 2: '))
             num1 = factos(x)
             num2 = factos(y)
-
+            if num1 or num2 == 'Factorial does not exist for -ve numbers':
+                print('Factorial does not exist for -ve numbers')
+                break
             if ops_input == '+':
                 print(num1 + num2, 'Is the answer for the following operation', x, '!', ops_input, y, "!")
             elif ops_input == '-':
