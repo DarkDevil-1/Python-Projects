@@ -317,7 +317,7 @@ def area():
                 x = a * b
                 print('\nAREA OF RECTANGLE =', x, g)
             else:
-                print('Batman is dark so is your skin(if your white then its your heart)')
+                print('Your mom')
         except ValueError:
             error()
         else:
