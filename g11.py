@@ -560,5 +560,8 @@ def list_apupdel():
     print(L)
     upd_index = int(input('Enter index to update: '))
     upd_val = input('Enter value to update: ')
-    L[upd_index] = upd_val
+    if upd_val.isdigit():
+        L[upd_index] = int(upd_val)
+    else:
+        L[upd_index] = upd_val
     print(L)
