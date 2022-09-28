@@ -511,3 +511,47 @@ def factorial_calculator():
             error()
         else:
             break
+
+
+# LISTS LESSON 3
+
+def list_slice():
+    L = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    L1 = L[5: 15: 2]
+    L2 = L[::4]
+    out = 0
+    sigma = 0
+    for i in L1:
+        sigma += i
+    summation = sigma
+    for i in L2:
+        out += i
+    avg = out / len(L2)
+    print(L1, '\n', L2)
+    print("Sum of L1 :", summation)
+    print("Average of L2 :", avg)
+
+
+def list_apupdel():
+    L = []
+    inp = input('Enter list values seperated by a comma(,): ')
+    val = ''
+    for i in inp:
+        if i != ',':
+            val += i
+            if val[0] == ' ':
+                val = ''
+        else:
+            L.append(val)
+            val = ''
+            continue
+    L.append(val)
+    print(L)
+    # Using del L deletes the list and is not possible to print it again it will be subjected to error
+    del_index = int(input('Enter index to delete: '))
+    del L[del_index]
+    print(L)
+    upd_index = int(input('Enter index to update: '))
+    upd_val = input('Enter value to update: ')
+    L[upd_index] = upd_val
+    print(L)
