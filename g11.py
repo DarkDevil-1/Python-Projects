@@ -539,7 +539,7 @@ def list_apupdel():
     for i in inp:
         if i != ',':
             val += i
-            if val[0] == ' ':
+            if val == ' ':
                 val = ''
         else:
             L.append(val)

@@ -4,13 +4,13 @@ val = ''
 for i in inp:
     if i != ',':
         val += i
-        if val[0] == ' ':
+        if val == ' ':
             val = ''
     else:
-        L.append(int(val))
+        L.append((val))
         val = ''
         continue
-L.append(int(val))
+L.append((val))
 print(L)
 # Using del L deletes the list and is not possible to print it again it will be subjected to error
 del_index = int(input('Enter index to delete: '))
