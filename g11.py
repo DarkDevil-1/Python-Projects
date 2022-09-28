@@ -542,10 +542,17 @@ def list_apupdel():
             if val == ' ':
                 val = ''
         else:
-            L.append(val)
-            val = ''
+            if val.isdigit():
+                L.append(int(val))
+                val = ''
+            else:
+                L.append(val)
+                val = ''
             continue
-    L.append(val)
+    if val.isdigit():
+        L.append(int(val))
+    else:
+        L.append(val)
     print(L)
     # Using del L deletes the list and is not possible to print it again it will be subjected to error
     del_index = int(input('Enter index to delete: '))
