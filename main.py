@@ -327,7 +327,66 @@ def area():
             break
 
 
-jas()
-what()
+def rock():
+    score = 0
+    comp_score = 0
+    draw_count = 0
+    while True:
+        options = ['Rock', 'Paper', 'Scissors']
+        ai_option = random.choice(options)
+        print('Possible options :- Rock[A], Paper[B], Scissors[C]')
+        print('Do not enter more than one letter')
+        user_inp = input('Enter your option: ')
+        if len(user_inp) != 1:
+            print('ENTER ONE LETTER DAMMIT')
+            rock()
+        if user_inp.lower() == 'a':
+            user_inp = options[0]
+        elif user_inp.lower() == 'b':
+            user_inp = options[1]
+        elif user_inp.lower() == 'c':
+            user_inp = options[2]
+        print('You chose', user_inp, 'and', 'AI chose', ai_option)
+        if user_inp == ai_option:
+            print('Its a Draw, Better luck next time')
+            draw_count += 1
+        elif user_inp == 'Rock':
+            if ai_option == 'Scissors':
+                print('You Won')
+                score += 1
+            else:
+                print('You Lost, Get good lmafo')
+                comp_score += 1
+        elif user_inp == 'Paper':
+            if ai_option == 'Rock':
+                print('You Won')
+                score += 1
+            else:
+                print('You Lost, Get good lmafo')
+                comp_score += 1
+        elif user_inp == 'Scissors':
+            if ai_option == 'Paper':
+                print('You Won')
+                score += 1
+            else:
+                print('You Lost, Get good lmafo')
+                comp_score += 1
+        print('Your score is', score, 'and AI score is', comp_score, 'and you drew', draw_count)
+        again = input('Do you want to play again (y/n): ')
+        if again.lower() == 'y':
+            continue
+
+
+def linear():
+    a = []
+    n = int(input('Enter the number of elements: '))
+    for i in range(0, n + 1):
+        b = int(input('Enter the elements: '))
+        a.append(b)
+    p = int(input('Enter the number to be searched: '))
+    for i in a:
+        if i == p:
+            print('The number is present at index', a.index(i))
+            break
 
 

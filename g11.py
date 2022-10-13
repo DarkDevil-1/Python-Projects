@@ -565,3 +565,129 @@ def list_apupdel():
     else:
         L[upd_index] = upd_val
     print(L)
+
+
+def alt_list():
+    L = []
+    inp = input('Enter list values seperated by a comma(,): ')
+    val = ''
+    for i in inp:
+        if i != ',':
+            val += i
+            if val == ' ':
+                val = ''
+        else:
+            if val.isdigit():
+                L.append(int(val))
+                val = ''
+            else:
+                L.append(val)
+                val = ''
+            continue
+    if val.isdigit():
+        L.append(int(val))
+    else:
+        L.append(val)
+    Slice = L[::2]
+    Even = L[1::2]
+    print(Slice, '\n', Even)
+
+
+def even_odd():
+    L = []
+    inp = input('Enter list values seperated by a comma(,): ')
+    val = ''
+    for i in inp:
+        if i != ',':
+            val += i
+            if val == ' ':
+                val = ''
+        else:
+            L.append(int(val))
+            val = ''
+            continue
+    L.append(int(val))
+    print(L)
+    E = []
+    O = []
+    G = []
+    for i in L:
+        if i % 2 == 0:
+            E.append(i)
+            G.append(int(i / 2))
+        else:
+            O.append(i)
+            G.append(int(i * 3))
+    print('Even List:', E, '\nOdd List:', O)
+    print(G)
+
+
+def list_sum():
+    L = []
+    inp = input('Enter list values seperated by a comma(,): ')
+    val = ''
+    for i in inp:
+        if i != ',':
+            val += i
+            if val == ' ':
+                val = ''
+        else:
+            L.append(int(val))
+            val = ''
+            continue
+    L.append(int(val))
+    print(L)
+    sum = 0
+    for i in L:
+        sum += i
+    print('Sum of list:', sum)
+
+
+def list_repeat():
+    L = []
+    inp = input('Enter list values seperated by a comma(,): ')
+    val = ''
+    for i in inp:
+        if i != ',':
+            val += i
+            if val == ' ':
+                val = ''
+        else:
+            if val.isdigit():
+                L.append(int(val))
+                val = ''
+            else:
+                L.append(val)
+                val = ''
+            continue
+    if val.isdigit():
+        L.append(int(val))
+    else:
+        L.append(val)
+    print(L, '\n')
+    for i in L:
+        x = L.count(i)
+        if x >= 2:
+            print(i, 'is repeated', x, 'times')
+            L.remove(i)
+
+
+def mean_of_list():
+    L = []
+    inp = eval(input('Enter list: '))
+    for i in inp:
+        L.append(i)
+    sum = 0
+    for i in L:
+        sum += i
+    avg = sum / len(L)
+    print(avg)
+
+
+def search():
+    L = [2, 0, 4, 8, 1, 9, 7, 3, 5, 6, 8]
+    m = int(input('Enter number to search: '))
+    if L.count(m) < 1:
+        print('Number not found')
+    else:
+        print(f'Number found at index {L.index(m)} it is repeated {L.count(m)} times')
