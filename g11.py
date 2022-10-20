@@ -691,3 +691,14 @@ def search():
         print('Number not found')
     else:
         print(f'Number found at index {L.index(m)} it is repeated {L.count(m)} times')
+
+
+def even_digits():
+    for i in range(200, 401):
+        k = str(i)
+        odd = [1, 3, 5, 7, 9]
+        for j in k:
+            if int(j) in odd:
+                break
+        else:
+            print(i)
