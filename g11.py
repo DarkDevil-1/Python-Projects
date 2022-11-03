@@ -400,23 +400,6 @@ def revstr():
         print(name[i], end='')
 
 
-def shorty():
-    word = input('Enter a word: ')
-    out = ''
-    for i in range(0, len(word)):
-        if word[i] == word[0]:
-            out += word[0]
-        elif word[i - 1] == ' ':
-            out += word[i]
-        else:
-            continue
-
-    out = out.upper()
-
-    for i in out:
-        print(i + '.', end='')
-
-
 def vowel_count():
     inp = input('Enter a word: ')
     v_count = 0
@@ -693,12 +676,110 @@ def search():
         print(f'Number found at index {L.index(m)} it is repeated {L.count(m)} times')
 
 
+def prime_num():
+    inp = int(input('Enter a number: '))
+    prime = False
+    for i in range(2, inp):
+        if inp % i == 0:
+            print(f'Not a prime number divided by {i}, {inp // i} times')
+            prime = True
+            break
+    if prime == False:
+        print('Given number is a prime number')
+
+
+def listi(inp):
+    L = []
+    val = ''
+    for i in inp:
+        if i != ',':
+            val += i
+            if val == ' ':
+                val = ''
+        else:
+            if val.isdigit():
+                L.append(int(val))
+                val = ''
+            else:
+                L.append(val)
+                val = ''
+            continue
+    if val.isdigit():
+        L.append(int(val))
+    else:
+        L.append(val)
+    return L
+
+
 def even_digits():
-    for i in range(200, 401):
-        k = str(i)
+    for i in range(100, 401):
         odd = [1, 3, 5, 7, 9]
-        for j in k:
-            if int(j) in odd:
+        f = f'{i}'
+        for k in f:
+            if int(k) in odd:
                 break
         else:
             print(i)
+
+
+def dict():
+    sentence = input('Enter a sentence: ')
+    soi = sentence.split(' ')
+    dic = {':)': 'smile', ':(': 'sad', ':/': 'confused', ':D': 'laugh', ':P': 'tongue'}
+    for i in soi:
+        for k in dic:
+            if i == k:
+                ind = soi.index(i)
+                soi[ind] = dic[k]
+
+    print(' '.join(soi))
+
+
+def armstrong():
+    inp = int(input('Enter a 3-digit number: '))
+    arm_num = f'{inp}'
+    sum = 0
+    for i in arm_num:
+        sum += int(i) ** 3
+        print(sum)
+    if f'{sum}' == arm_num:
+        print('Armstrong number')
+    else:
+        print('Not an Armstrong number')
+
+
+def palindrome():
+    org = int(input('Enter a number: '))
+    num = f'{org}'
+    inp = list(num)
+    reverse = inp[::-1]
+    if inp == reverse:
+        print('Palindrome')
+    else:
+        print('Not a palindrome')
+
+
+def perfect_num():
+    inp = int(input('Enter a number: '))
+    sum = 0
+    for i in range(1, inp):
+        if inp % i == 0:
+            sum += i
+    if sum == inp:
+        print('Perfect number')
+    else:
+        print('Not a perfect number')
+
+
+def short_form():
+    inp = input('Enter a sentence: ')
+    soi = inp.split(' ')
+    short = ''
+    for i in soi:
+        if soi[-1] == i:
+            short += i[0]
+        else:
+            short += i[0] + '.'
+    print(short.upper())
+
+
